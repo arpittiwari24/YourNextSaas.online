@@ -4,7 +4,7 @@ import { signIn } from "next-auth/react"
 const Navbar = () => {
   return (
    <div className="navbar">
-  <div className="navbar-start">
+  <div className="navbar-start lg:pl-16">
     <div className="dropdown">
       <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
@@ -14,7 +14,7 @@ const Navbar = () => {
         <li><a>Pricing</a></li>
       </ul>
     </div>
-    <h1 className="text-xl md:text-3xl font-semibold">YourNextSass</h1>
+    <h1 className="text-xl md:text-2xl font-semibold">YourNextSass</h1>
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1 md:text-lg">
@@ -31,8 +31,10 @@ const Navbar = () => {
       <li><a className="link link-hover" href="#pricing">Pricing</a></li>
     </ul>
   </div>
-  <div className="navbar-end">
-    <button className="btn btn-info" onClick={() => signIn("google")}>Sign Up</button>
+  <div className="navbar-end lg:pr-10">
+  <button onClick={() => signIn("google")} className="inline-flex justify-center items-center gap-x-3 text-center bg-gradient-to-tl from-blue-600 to-violet-600 hover:from-violet-600 hover:to-blue-600 border border-transparent text-white text-sm font-medium rounded-full focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 focus:ring-offset-white py-3 px-4 ">
+          Sign Up
+        </button>
   </div>
 </div> 
   )
