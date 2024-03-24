@@ -1,38 +1,28 @@
-"use client"
+
 import Features from "@/components/Features";
 import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
 import Navbar from "@/components/Navbar";
 import Pricing from "@/components/Pricing";
-import axios from "axios";
+import supabaseClient from "@/utils/supabase-connect";
+import { getServerSession } from "next-auth";
+import { getSession, useSession } from "next-auth/react";
+import { authOptions } from "./api/auth/[...nextauth]/route";
+import { redirect } from "next/navigation";
 
-
-export default function Home() {
-
-  const handlePayment = async () => {
-    
-    try {
-    const response = await axios.post("/api/purchase",{
-      productId: "308195"
-    })      
-    console.log(response.data)
-
-    window.open(response.data.checkoutUrl,"_blank")
-    } catch (error) {
-      console.log(error)
-      alert("Error while processing payments, try again in a few seconds")
-    }
+export default async function Home() {
+  const session = await getServerSession(authOptions)
+  if(session) {
+    redirect("/dashboard")
   }
-  
+
   return (
     <>
     <Navbar />
     <Hero />
     <Features />
+    {JSON.stringify(data)}
     <Pricing />
-    <button className="btn btn-success" onClick={handlePayment}>
-      But the product
-    </button>
     <Footer />
     </>
   );

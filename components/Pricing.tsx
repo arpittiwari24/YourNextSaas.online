@@ -1,21 +1,44 @@
 'use client'
+
+import axios from "axios"
+
 // import { useSession } from "next-auth/react"
 
 const Pricing = () => {
 
- const Lifetime = ""
+ const Yearly = process.env.YEARLY_VARIANT_ID
 
-  const Monthly = ""
+  const Monthly = process.env.MONTHLY_VARIANT_ID
 
   // const {data: session} = useSession()
   // const email = session?.user?.email
 
-  const handleClick = () => {
-    window.location.replace(Lifetime)
+  const handleClickYearly = async () => {
+    try {
+      const response = await axios.post("/api/purchase",{
+        productId: Yearly
+      })      
+      console.log(response.data)
+  
+      window.open(response.data.checkoutUrl,"_blank")
+      } catch (error) {
+        console.log(error)
+        alert("Error while processing payments, try again in a few seconds")
+      }
   }
 
-  const handleClick2 = () => {
-    window.location.replace(Monthly)
+  const handleClickMonthly = async () => {
+    try {
+      const response = await axios.post("/api/purchase",{
+        productId: Monthly
+      })      
+      console.log(response.data)
+  
+      window.open(response.data.checkoutUrl,"_blank")
+      } catch (error) {
+        console.log(error)
+        alert("Error while processing payments, try again in a few seconds")
+      }
   }
   return (
     <>
@@ -98,7 +121,7 @@ const Pricing = () => {
     </ul>
 
     <button className="mt-5 py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent bg-blue-600 text-white hover:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none focus:outline-none focus:ring-1 focus:ring-gray-600" 
-    onClick={handleClick2}
+    onClick={handleClickMonthly}
     >
       Sign up
     </button>
@@ -135,7 +158,7 @@ const Pricing = () => {
     </ul>
 
     <button className="mt-5 py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent bg-blue-200 text-blue-800 hover:bg-blue-200 disabled:opacity-50 disabled:pointer-events-none focus:outline-none focus:ring-1 focus:ring-gray-600"
-    onClick={handleClick}
+    onClick={handleClickYearly}
     >
       Sign up
     </button>

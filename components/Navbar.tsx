@@ -1,8 +1,7 @@
 'use client'
-import { signIn, signOut, useSession } from "next-auth/react"
+import { signIn, signOut} from "next-auth/react"
 
-const Navbar = () => {
-  const {data: session} = useSession()
+const Navbar = async () => {
 
   return (
    <div className="navbar">
@@ -34,15 +33,9 @@ const Navbar = () => {
     </ul>
   </div>
   <div className="navbar-end lg:pr-10">
-  {session && session.user ? (
-    <button onClick={() => signOut()} className="inline-flex justify-center items-center gap-x-3 text-center bg-gradient-to-tl from-blue-600 to-violet-600 hover:from-violet-600 hover:to-blue-600 border border-transparent text-white text-sm font-medium rounded-full focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 focus:ring-offset-white py-3 px-4 ">
-          Sign Out
-        </button>
-  ) : (
     <button onClick={() => signIn("google")} className="inline-flex justify-center items-center gap-x-3 text-center bg-gradient-to-tl from-blue-600 to-violet-600 hover:from-violet-600 hover:to-blue-600 border border-transparent text-white text-sm font-medium rounded-full focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 focus:ring-offset-white py-3 px-4 ">
           Sign Up
         </button>
-  )}
   </div>
 </div> 
   )
