@@ -4,10 +4,10 @@ import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
 import Navbar from "@/components/Navbar";
 import Pricing from "@/components/Pricing";
+import authOptions from "@/utils/authOptions";
 import supabaseClient from "@/utils/supabase-connect";
 import { getServerSession } from "next-auth";
 import { getSession, useSession } from "next-auth/react";
-import { authOptions } from "./api/auth/[...nextauth]/route";
 import { redirect } from "next/navigation";
 
 export default async function Home() {
@@ -21,7 +21,6 @@ export default async function Home() {
     <Navbar />
     <Hero />
     <Features />
-    {JSON.stringify(data)}
     <Pricing />
     <Footer />
     </>

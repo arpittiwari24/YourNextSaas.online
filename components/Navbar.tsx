@@ -3,6 +3,7 @@ import { signIn, signOut} from "next-auth/react"
 
 const Navbar = async () => {
 
+  
   return (
    <div className="navbar">
   <div className="navbar-start lg:pl-16">
