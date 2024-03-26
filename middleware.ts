@@ -1,9 +1,11 @@
 import { NextRequest, NextResponse } from "next/server";
 
 export default function middleware(req: NextRequest) {
-    const verify = req.cookies.get("next-auth.session-token")
+    const token = req.cookies.get("next-auth.session-token")
+    console.log(token);
+    
     const url = req.url
-    if(!verify && url.includes("/dashboard")){
+    if(token === undefined && url.includes("/dashboard")){
         return NextResponse.redirect("https://yournextsass.vercel.app")
     }
 }
