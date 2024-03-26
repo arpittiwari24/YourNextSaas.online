@@ -8,8 +8,8 @@ export const dynamic = "force-dynamic";
 export async function POST(req: Request) {
   const session = await getServerSession(authOptions)
   const email = session?.user?.email
-  const {data} = await supabaseClient.from("users").select("id").eq("email",email)
-  console.log(data);
+  const {data: user} = await supabaseClient.from("users").select("id").eq("email",email)
+  console.log(user);
   try {
     const reqData = await req.json();
 
@@ -25,7 +25,7 @@ export async function POST(req: Request) {
         attributes: {
           checkout_data: {
             custom: {
-              user_id: "123",
+              user_id: user,
             },
           },
         },
@@ -49,8 +49,8 @@ export async function POST(req: Request) {
     const checkoutUrl = response.data.data.attributes.url;
 
     console.log(response.data);
-    console.log(data);
-    return Response.json({ checkoutUrl,data });
+
+    return Response.json({ checkoutUrl });
   } catch (error) {
     console.error(error);
     return Response.json({ message: "An error occured" }, { status: 500 });

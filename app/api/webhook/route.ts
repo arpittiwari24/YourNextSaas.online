@@ -1,13 +1,9 @@
-import authOptions from "@/utils/authOptions";
+
 import supabaseClient from "@/utils/supabase-connect";
 import crypto from "crypto";
-import { getServerSession } from "next-auth";
+
 
 export async function POST(req : Request) {
-  const session = await getServerSession(authOptions)
-  const email = session?.user?.email
-  const {data} = await supabaseClient.from("users").select("id").eq("email",email)
-  console.log(data);
 
   try {
     // Catch the event type
@@ -34,6 +30,9 @@ export async function POST(req : Request) {
     if (eventType === "order_created") {
       const userId : String = body.meta.custom_data.user_id;
       const isSuccessful = body.data.attributes.status === "paid";
+    } else if(eventType ==="subscription_created") {
+      const userId : String = body.meta.custom_data.user_id;
+      await supabaseClient.from("users").update({active: true}).eq("id",userId)
     }
 
     return Response.json({ message: "Webhook received" });
