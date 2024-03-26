@@ -3,6 +3,8 @@ import { Comic_Neue, Inter, Open_Sans, Saira } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "react-hot-toast";
 import Providers from "@/components/Providers";
+import PHProvider from "@/components/Analaytics-Provider";
+import PlausibleProvider from "next-plausible";
 
 const sans = Open_Sans({ subsets: ["latin"] });
 
@@ -18,12 +20,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      {/* <script defer data-domain="" src="https://plausible.io/js/script.js"></script> */}
+      <PlausibleProvider domain="https://yournextsass.vercel.app">
       <body className={sans.className}>
          <Toaster position="top-center" />
         <Providers >
           {children}
         </Providers>
       </body>
+      </PlausibleProvider>
     </html>
   );
 }

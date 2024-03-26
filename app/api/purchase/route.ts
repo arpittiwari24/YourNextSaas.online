@@ -1,8 +1,15 @@
+import authOptions from "@/utils/authOptions";
 import { lemonSqueezyApiInstance } from "@/utils/axios";
+import supabaseClient from "@/utils/supabase-connect";
+import { getServerSession } from "next-auth";
 
 export const dynamic = "force-dynamic";
 
 export async function POST(req: Request) {
+  const session = await getServerSession(authOptions)
+  const email = session?.user?.email
+  const {data} = await supabaseClient.from("users").select("id").eq("email",email)
+  console.log(data);
   try {
     const reqData = await req.json();
 
@@ -42,8 +49,8 @@ export async function POST(req: Request) {
     const checkoutUrl = response.data.data.attributes.url;
 
     console.log(response.data);
-
-    return Response.json({ checkoutUrl });
+    console.log(data);
+    return Response.json({ checkoutUrl,data });
   } catch (error) {
     console.error(error);
     return Response.json({ message: "An error occured" }, { status: 500 });

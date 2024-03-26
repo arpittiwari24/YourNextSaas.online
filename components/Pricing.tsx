@@ -18,8 +18,7 @@ const Pricing = () => {
       const response = await axios.post("/api/purchase",{
         productId: Yearly
       })      
-      console.log(response.data)
-  
+
       window.open(response.data.checkoutUrl,"_blank")
       } catch (error) {
         console.log(error)
@@ -30,7 +29,7 @@ const Pricing = () => {
   const handleClickMonthly = async () => {
     try {
       const response = await axios.post("/api/purchase",{
-        productId: Monthly
+        productId: "308195"
       })      
       console.log(response.data)
   
