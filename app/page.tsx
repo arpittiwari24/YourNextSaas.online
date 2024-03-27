@@ -9,7 +9,7 @@ import { AuthOptions, getServerSession } from "next-auth";
 import { redirect } from "next/navigation";
 
 export default async function Home() {
-  const session = await getServerSession(authOptions as any)
+  const session = await getServerSession(authOptions as Object)
   if(session) {
     redirect("/dashboard")
   }

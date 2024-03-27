@@ -6,7 +6,7 @@ import { getServerSession } from "next-auth";
 export const dynamic = "force-dynamic";
 
 export async function POST(req: Request) {
-  const session = await getServerSession(authOptions)
+  const session = await getServerSession(authOptions as Object)
   const email = session?.user?.email
   const {data: user} = await supabaseClient.from("users").select("id").eq("email",email)
   console.log(user);
