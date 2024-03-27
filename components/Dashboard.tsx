@@ -1,13 +1,11 @@
 'use client'
-import Dashboard from "@/components/Dashboard"
-import Loading from "@/components/Loading"
-import Navbar from "@/components/Navbar"
-import supabaseClient from "@/utils/supabase-connect"
-import { signOut, useSession } from "next-auth/react"
-import { redirect } from "next/navigation"
 import { useEffect, useState } from "react"
+import Loading from "./Loading"
+import supabaseClient from "@/utils/supabase-connect"
+import { useSession } from "next-auth/react"
 
-const Page = () => {
+
+const Dashboard = () => {
   const { data: session } = useSession()
   const email = session?.user?.email
   const [active, setActive] = useState<boolean>(false)
@@ -37,24 +35,15 @@ const Page = () => {
     return <Loading /> // or any other loading indicator
   }
 
-  if (!session) {
-    redirect("/")
-  }
-
-  const handleClick = async (e: React.FormEvent) => {
-    e.preventDefault()
-    const { data, error } = await supabaseClient.from("users").update({ active: true }).eq("email", email)
-    if (error) throw error
-    console.log(data);
-  }
-
   return (
     <div>
-      <Navbar />
-      <Dashboard />
+       {active ? (
+        JSON.stringify(active)
+      ) : (
+        <>Free</>
+      )}
     </div>
   )
 }
 
-export default Page
-
+export default Dashboard
