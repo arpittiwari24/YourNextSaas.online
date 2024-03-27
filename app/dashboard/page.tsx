@@ -49,7 +49,7 @@ const Page = async () => {
         {active ? (
            JSON.stringify(active)
         ): (
-          <></>
+          <>Free</>
         )}
        
     </div>
