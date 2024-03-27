@@ -5,11 +5,11 @@ import Hero from "@/components/Hero";
 import Navbar from "@/components/Navbar";
 import Pricing from "@/components/Pricing";
 import authOptions from "@/utils/authOptions";
-import { getServerSession } from "next-auth";
+import { AuthOptions, getServerSession } from "next-auth";
 import { redirect } from "next/navigation";
 
 export default async function Home() {
-  const session = await getServerSession(authOptions)
+  const session = await getServerSession(authOptions as any)
   if(session) {
     redirect("/dashboard")
   }

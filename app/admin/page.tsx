@@ -3,7 +3,7 @@
 import Loading from "@/components/Loading"
 import supabaseClient from "@/utils/supabase-connect"
 import { useSession } from "next-auth/react"
-import { useEffect, useState } from "react"
+import { useEffect, useLayoutEffect, useState } from "react"
 
 export default function Admin() {
     const {data : session} = useSession()
@@ -11,7 +11,7 @@ export default function Admin() {
     const [loading,setLoading] = useState<boolean>(false)
     const [admin,setAdmin] = useState<boolean>(false)
 
-    useEffect(() => {
+    useLayoutEffect(() => {
         const fetch = async() => {
             setLoading(true)
             try {
@@ -20,8 +20,10 @@ export default function Admin() {
                 if(data && data[0].role !== undefined) {
                  if(data[0].role === "admin") {
                      setAdmin(true)
+                     setLoading(false)
                  } else {
                      setAdmin(false)
+                     setLoading(false)
                     }
                 } 
                  console.log(data);
@@ -32,15 +34,13 @@ export default function Admin() {
                 setLoading(false)
             }
         }   
-        const timeout = setTimeout(() => {
             fetch()
-        },500)
-        return () => clearTimeout(timeout)
+  
     },[])
 
         return (
             <>
-          {loading &&   <Loading />}
+          {loading &&  <Loading />}
           {admin ? (
             <p>Welcome admin bhai</p>
           ) : (

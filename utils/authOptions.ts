@@ -1,4 +1,5 @@
 import { SupabaseAdapter } from "@auth/supabase-adapter";
+import { Session } from "next-auth";
 import { Adapter } from "next-auth/adapters";
 import NextAuth from "next-auth/next";
 import GoogleProvider from "next-auth/providers/google";
@@ -15,10 +16,7 @@ const authOptions = {
       secret: process.env.NEXT_PUBLIC_SUPABASE_SERVICE_ROLE_KEY ?? "",
     }) as Adapter,
     callbacks : {
-      async jwt({token,trigger, session}) {
-        if(trigger === "update" && session?.name) {
-          token.name = session.name
-        }
+      async jwt({token,trigger, session}: {token: string, trigger: string, session: Session }) {
         return token
       }
     },
