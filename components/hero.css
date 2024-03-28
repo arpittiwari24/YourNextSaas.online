@@ -1,0 +1,17 @@
+.next-sass::after {
+    content: "";
+    width: 100%;
+    height: 10px;
+    background-image: url(https://www.beyondcss.dev/underline.svg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.next-sass {
+    font-size: 3rem;
+    position: relative;
+}

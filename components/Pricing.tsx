@@ -53,7 +53,7 @@ const Pricing = () => {
 
 <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:items-center">
 
-  <div className="flex flex-col border border-white text-center rounded-xl p-8 ">
+  <div className="flex flex-col border border-white text-center rounded-xl p-8">
     <h4 className="font-medium text-lg  ">Free</h4>
     <span className="mt-7 font-bold text-5xl  ">Free</span>
 
