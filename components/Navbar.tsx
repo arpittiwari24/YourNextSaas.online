@@ -1,7 +1,7 @@
 'use client'
 import supabaseClient from "@/utils/supabase-connect"
 import { signIn, signOut, useSession} from "next-auth/react"
-import { useEffect, useState } from "react"
+import { useState } from "react"
 
 const Navbar = async () => {
 
