@@ -10,25 +10,25 @@ const Navbar = async () => {
   const [active, setActive] = useState<boolean>(false)
   const [loading, setLoading] = useState<boolean>(true) // Set loading to true initially
 
-  const fetchData = async () => {
-    try {
-      const { data: user } = await supabaseClient.from("users").select("active").eq("email", email)
-      if (user !== null && user[0].active === true) {
-        setActive(true)
-        setLoading(false)
-      } else {
-        setActive(false)
-        setLoading(false)
-      }
-    } catch (error) {
-      console.log(error);
-      setLoading(false)
-    }
-  }
+  // const fetchData = async () => {
+  //   try {
+  //     const { data: user } = await supabaseClient.from("users").select("active").eq("email", email)
+  //     if (user !== null && user[0].active === true) {
+  //       setActive(true)
+  //       setLoading(false)
+  //     } else {
+  //       setActive(false)
+  //       setLoading(false)
+  //     }
+  //   } catch (error) {
+  //     console.log(error);
+  //     setLoading(false)
+  //   }
+  // }
 
-  useEffect(() => {
-    fetchData()
-  }, [email])
+  // useEffect(() => {
+  //   fetchData()
+  // }, [email])
   
   return (
    <div className="navbar">
