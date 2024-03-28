@@ -47,7 +47,7 @@ const Navbar = async () => {
     ) : (
       <h1 className="text-xl md:text-2xl font-semibold">YourNextSass</h1>
     )} */}
-       <h1 className="text-xl md:text-2xl font-semibold">YourNextSass</h1>
+       <h1 className="text-xl md:text-2xl font-semibold">YourNextSaas</h1>
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1 md:text-lg">
