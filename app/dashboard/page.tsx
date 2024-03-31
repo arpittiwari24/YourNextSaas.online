@@ -16,7 +16,6 @@ const Page = () => {
     <div>
       <Navbar />
       {/* <Dashboard /> */}
-      <Pricing />
     </div>
   )
 }
