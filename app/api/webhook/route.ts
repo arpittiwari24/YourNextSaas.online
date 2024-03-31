@@ -33,6 +33,9 @@ export async function POST(req : Request) {
     } else if(eventType ==="subscription_created") {
       const userId : String = body.meta.custom_data.user_id;
       await supabaseClient.from("users").update({active: true}).eq("id",userId)
+    } else if(eventType === "subscription_paused") {
+      const userId : String = body.meta.custom_data.user_id;
+      await supabaseClient.from("users").update({active: false}).eq("id",userId)
     }
 
     return Response.json({ message: "Webhook received" });
