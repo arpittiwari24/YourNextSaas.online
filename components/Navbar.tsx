@@ -3,7 +3,7 @@ import supabaseClient from "@/utils/supabase-connect"
 import { signIn, signOut, useSession} from "next-auth/react"
 import { useState } from "react"
 
-const Navbar = async () => {
+const Navbar = () => {
 
   const {data: session} = useSession()
   const email = session?.user?.email

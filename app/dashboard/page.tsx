@@ -1,16 +1,20 @@
-
-import Dashboard from "@/components/Dashboard"
-import Loading from "@/components/Loading"
+'use client'
 import Navbar from "@/components/Navbar"
-import Pricing from "@/components/Pricing"
-import supabaseClient from "@/utils/supabase-connect"
-import { signOut, useSession } from "next-auth/react"
-import { redirect } from "next/navigation"
-import { useEffect, useState } from "react"
+import { useEffect } from "react"
 
 const Page = () => {
-  // const { data: session } = useSession()
-  // const email = session?.user?.email
+  const handleEmail = async () => {
+    const data = fetch("/api/email")
+  if((await data).status === 200) {
+    console.log("successfull")
+  } else {
+    console.log("Unsuccessfull")
+  }
+  }
+
+  useEffect(() => {
+    handleEmail()
+  },[])
 
   return (
     <div>
@@ -21,4 +25,3 @@ const Page = () => {
 }
 
 export default Page
-
