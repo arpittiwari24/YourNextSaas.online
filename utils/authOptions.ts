@@ -25,10 +25,10 @@ export type AuthUser = {
           clientSecret: process.env.GOOGLE_CLIENT_SECRET ?? ""
         }),
   ],
-  // adapter: SupabaseAdapter({
-  //     url: process.env.NEXT_PUBLIC_SUPABASE_URL ?? "",
-  //     secret: process.env.NEXT_PUBLIC_SUPABASE_SERVICE_ROLE_KEY ?? "",
-  //   }) as Adapter,
+  adapter: SupabaseAdapter({
+      url: process.env.NEXT_PUBLIC_SUPABASE_URL ?? "",
+      secret: process.env.NEXT_PUBLIC_SUPABASE_SERVICE_ROLE_KEY ?? "",
+    }) as Adapter,
     callbacks : {
       async jwt({ token, account }: { token: JWT; account: Account | null }) {
         if (!account) {
