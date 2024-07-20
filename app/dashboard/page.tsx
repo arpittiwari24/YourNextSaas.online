@@ -19,7 +19,6 @@ const Page = () => {
   return (
     <div>
       <Navbar />
-      {/* <Dashboard /> */}
     </div>
   )
 }

@@ -4,6 +4,8 @@ import { Account, AuthOptions, Session } from "next-auth";
 import { Adapter } from "next-auth/adapters";
 import { JWT } from "next-auth/jwt";
 import GoogleProvider from 'next-auth/providers/google'
+import connectMongoDb from "./mongo-connect";
+import User from "./models/users";
 
 export type AuthUser = {
   name: string;
@@ -62,6 +64,29 @@ export type AuthUser = {
         session.user = user;
         session.error = token.error;
         return session;
+      },
+      // @ts-ignore
+      async signIn({ user, account }: { user: AuthUser; account: Account }) {
+        if (account?.provider == "google") {
+          await connectMongoDb();
+          try {
+            const existingUser = await User.findOne({ email: user.email });
+            if (!existingUser) {
+              const newUser = new User({
+                email: user.email,
+                name: user.name,
+                image: user.image,
+              });
+  
+              await newUser.save();
+              return true;
+            }
+            return true;
+          } catch (err) {
+            console.log("Error saving user", err);
+            return false;
+          }
+        }
       },
       },
     session : {

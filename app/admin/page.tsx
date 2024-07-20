@@ -1,4 +1,5 @@
 import authOptions from "@/utils/authOptions"
+import User from "@/utils/models/users"
 import supabaseClient from "@/utils/supabase-connect"
 import { getServerSession } from "next-auth"
 
@@ -7,6 +8,10 @@ export default async function Admin() {
   const email = session?.user?.email
   const {data: user} = await supabaseClient.from("users").select("role").eq("email",email)
   const {data} = await supabaseClient.from("users").select("*")
+
+  console.log(await User.find());
+  
+
 
   if(email && user && user[0].role === "admin") {
     return (
