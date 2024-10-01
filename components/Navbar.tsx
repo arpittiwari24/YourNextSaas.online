@@ -50,10 +50,10 @@ const Navbar = () => {
     ) : (
       <h1 className="text-xl md:text-2xl font-semibold">YourNextSass</h1>
     )} */}
-       <h1 className="text-xl md:text-2xl font-semibold">YourNextSaas</h1>
+       <h1 className="text-xl md:text-2xl font-semibold text-black">YourNextSaas</h1>
   </div>
   <div className="navbar-center hidden lg:flex">
-    <ul className="menu menu-horizontal px-1 md:text-lg">
+    <ul className="menu menu-horizontal mr-auto text-black md:text-lg">
       <li><a className="link link-hover">Features</a></li>
       {/* <li>
         <details>
