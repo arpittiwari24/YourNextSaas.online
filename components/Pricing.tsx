@@ -41,6 +41,7 @@ const Pricing = () => {
   }
   return (
     <>
+
       <div className="max-w-[85rem] px-4 py-20 sm:px-6 lg:px-8 lg:py-20 mx-auto" id="pricing">
 
         <div className="max-w-2xl mx-auto text-center mb-10 lg:mb-14">

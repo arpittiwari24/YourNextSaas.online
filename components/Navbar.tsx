@@ -51,6 +51,7 @@ const Navbar = () => {
     ) : (
       <h1 className="text-xl md:text-2xl font-semibold">YourNextSass</h1>
     )} */}
+
         <h1 className="text-xl md:text-2xl font-semibold"><Link href="/">YourNextSaas</Link></h1>
       </div>
       <div className="navbar-center hidden lg:flex">

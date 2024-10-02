@@ -9,7 +9,7 @@ const Features = () => {
         <section className="mb-32 text-center">
           <div className="flex justify-center">
             <div className="max-w-[700px] text-center">
-              <h2 className="pb-6 md:pb-20 text-center text-5xl max-sm:text-3xl font-bold">
+              <h2 className="pb-6 md:pb-20 text-center text-black text-5xl max-sm:text-3xl font-bold">
                 Why Choose
                 <u className="text-primary text-primary-400 px-2">Us?</u>
               </h2>
@@ -17,7 +17,7 @@ const Features = () => {
           </div>
           <div className="grid gap-x-6 md:grid-cols-2 lg:grid-cols-4 lg:gap-x-12">
             <div className="mb-12 lg:mb-0 ">
-              <div className="mb-6 inline-block rounded-full bg-primary-100 p-4 text-primary border">
+              <div className="mb-4 inline-block rounded-full bg-primary-100 p-4 text-primary border">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -33,13 +33,13 @@ const Features = () => {
                   />
                 </svg>
               </div>
-              <h5 className="mb-4 text-lg font-bold">Support 24/7</h5>
+              <h5 className="mb-4 text-lg font-bold text-black ">Support 24/7</h5>
               <p className="text-neutral-500 ">
                 Our dedicated support team is available round the clock to assist you with any queries or issues you might encounter.
               </p>
             </div>
             <div className="mb-12 lg:mb-0">
-              <div className="mb-6 inline-block rounded-full bg-primary-100 p-4 text-primary border">
+              <div className="mb-4 inline-block rounded-full bg-primary-100 p-4 text-primary border">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -55,13 +55,13 @@ const Features = () => {
                   />
                 </svg>
               </div>
-              <h5 className="mb-4 text-lg font-bold">Safe and solid</h5>
+              <h5 className="mb-4 text-lg font-bold text-black ">Safe and solid</h5>
               <p className="text-neutral-500 ">
                 We ensure the security and reliability of your shortened URLs, providing you with peace of mind.
               </p>
             </div>
             <div className="mb-12 md:mb-0">
-              <div className="mb-6 inline-block rounded-full bg-primary-100 p-4 text-primary border">
+              <div className="mb-4 inline-block rounded-full bg-primary-100 p-4 text-primary border">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -76,13 +76,13 @@ const Features = () => {
                   />
                 </svg>
               </div>
-              <h5 className="mb-4 text-lg font-bold">Extremely fast</h5>
+              <h5 className="mb-4 text-lg font-bold text-black ">Extremely fast</h5>
               <p className="text-neutral-500 ">
                 With our advanced infrastructure, we guarantee lightning-fast redirection times for your shortened URLs.
               </p>
             </div>
             <div className="mb-12 md:mb-0">
-              <div className="mb-6 inline-block rounded-full bg-primary-100 p-4 text-primary border">
+              <div className="mb-4 inline-block rounded-full bg-primary-100 p-4 text-primary border">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -103,7 +103,7 @@ const Features = () => {
                   />
                 </svg>
               </div>
-              <h5 className="mb-4 text-lg font-bold">Live analytics</h5>
+              <h5 className="mb-4 text-lg font-bold text-black ">Live analytics</h5>
               <p className="text-neutral-500 ">
                 Gain valuable insights into your audience and track the performance of your shortened URLs in real-time .
               </p>

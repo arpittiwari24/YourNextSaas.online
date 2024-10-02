@@ -2,9 +2,9 @@ import React from 'react';
 
 export default function Testimonial()  {
   return (
-    <section className='py-2 md:py-2 px-10'>
+    <section className='py-2 md:py-2 px-10 flex justify-center items-center'>
         <div className='container'>
-          <div className='text-center text-white'>
+          <div className='text-center text-black '>
             <h2 className='text-3xl sm:text-5xl font-bold mb-4'>Fans Section</h2>
             <p className='text-lg sm:text-2xl mb-6 md:mb-14'>
               They have experienced the beauty of our innovation 
@@ -24,11 +24,11 @@ export default function Testimonial()  {
                       </div>
 
                       <div className='ml-3'>
-                        <p className='text-lg font-medium leading-tight'>Natalia </p>
-                        <small>Mobile dev</small>
+                        <p className='text-lg font-medium leading-tigh text-black t'>Natalia </p>
+                        <small className='text-black '>Mobile dev</small>
                       </div>
                     </div>
-                    <p>
+                    <p className='text-black '>
                       Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum aliquid quo eum quae quos illo earum ipsa doloribus nostrum minus libero aspernatur laborum cum, a suscipit, ratione ea totam ullam! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Architecto laboriosam deleniti aperiam ab veniam sint non cumque quis tempore cupiditate. Sint libero voluptas veniam at reprehenderit, veritatis harum et rerum.
                     </p>
                   </div>
@@ -49,11 +49,11 @@ export default function Testimonial()  {
                       </div>
 
                       <div className='ml-3'>
-                        <p className='text-lg font-medium leading-tight'>Mia Khalifa</p>
-                        <small>Creator of Tailwindcss</small>
+                        <p className='text-lg font-medium leading-tight text-black '>Mia Khalifa</p>
+                        <small className='text-black '>Creator of Tailwindcss</small>
                       </div>
                     </div>
-                    <p>
+                    <p className='text-black '>
                       Lorem ipsum dolor sit amet consectetur, adipisicing elit. Architecto laboriosam deleniti aperiam ab veniam sint non cumque quis tempore cupiditate. Sint libero voluptas veniam at reprehenderit, veritatis harum et rerum.
                     </p>
                   </div>
@@ -74,11 +74,11 @@ export default function Testimonial()  {
                       </div>
 
                       <div className='ml-3'>
-                        <p className='text-lg font-medium leading-tight'>Dani Daniels</p>
-                        <small>Manager</small>
+                        <p className='text-lg font-medium leading-tight text-black '>Dani Daniels</p>
+                        <small className='text-black '>Manager</small>
                       </div>
                     </div>
-                    <p>
+                    <p className='text-black '>
                       Lorem ipsum dolor sit amet consectetur, adipisicing elit. Architecto laboriosam deleniti aperiam ab veniam sint non cumque quis tempore cupiditate. Sint libero voluptas veniam at reprehenderit, veritatis harum et rerum.
                     </p>
                   </div>
@@ -98,11 +98,11 @@ export default function Testimonial()  {
                       </div>
 
                       <div className='ml-3'>
-                        <p className='text-lg font-medium leading-tight'>Sheena Ryder</p>
-                        <small>Creator of Tailwind Awesome</small>
+                        <p className='text-lg font-medium leading-tight text-black '>Sheena Ryder</p>
+                        <small className='text-black '>Creator of Tailwind Awesome</small>
                       </div>
                     </div>
-                    <p>
+                    <p className='text-black '>
                       Lorem ipsum dolor sit amet consectetur, adipisicing elit. Architecto laboriosam deleniti aperiam ab veniam sint non cumque quis tempore cupiditate. Sint libero voluptas veniam at reprehenderit, veritatis harum et rerum.
                     </p>
                   </div>
@@ -123,11 +123,11 @@ export default function Testimonial()  {
                       </div>
 
                       <div className='ml-3'>
-                        <p className='text-lg font-medium leading-tight'>Johny Sins</p>
-                        <small>Mobile dev</small>
+                        <p className='text-lg font-medium leading-tight text-black '>Johny Sins</p>
+                        <small className='text-black '>Mobile dev</small>
                       </div>
                     </div>
-                    <p>
+                    <p className='text-black '>
                       Lorem ipsum dolor sit amet consectetur, adipisicing elit. Architecto laboriosam deleniti aperiam ab veniam sint non cumque quis tempore cupiditate. Sint libero voluptas veniam at reprehenderit, veritatis harum et rerum.
                     </p>
                   </div>
@@ -148,11 +148,11 @@ export default function Testimonial()  {
                       </div>
 
                       <div className='ml-3'>
-                        <p className='text-lg font-medium leading-tight'>Reagan Foxx</p>
-                        <small>Mobile dev</small>
+                        <p className='text-lg font-medium leading-tight text-black '>Reagan Foxx</p>
+                        <small className='text-black '>Mobile dev</small>
                       </div>
                     </div>
-                    <p>
+                    <p className='text-black '>
                       Lorem ipsum dolor sit amet consectetur, adipisicing elit. Architecto laboriosam deleniti aperiam ab veniam sint non cumque quis tempore cupiditate. Sint libero voluptas veniam at reprehenderit, veritatis harum et rerum.
                     </p>
                   </div>
