@@ -44,14 +44,14 @@ const Pricing = () => {
     <div className="max-w-[85rem] px-4 py-20 sm:px-6 lg:px-8 lg:py-20 mx-auto">
 
 <div className="max-w-2xl mx-auto text-center mb-10 lg:mb-14">
-  <h2 className="text-2xl font-bold md:text-4xl md:leading-tight">Pricing</h2>
-  <p className="mt-1  ">Whatever your status, our offers evolve according to your needs.</p>
+  <h2 className="text-2xl font-bold md:text-4xl md:leading-tight text-black ">Pricing</h2>
+  <p className="mt-1 text-black  ">Whatever your status, our offers evolve according to your needs.</p>
 </div>
 
 
 
 
-<div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:items-center">
+<div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:items-center text-black ">
 
   <div className="flex flex-col border border-white text-center rounded-xl p-8">
     <h4 className="font-medium text-lg  ">Free</h4>

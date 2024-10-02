@@ -2,9 +2,9 @@
 
 const Footer = () => {
   return (
-   <div className="">
+   <div className=" ">
     <hr className="" />
-   <footer className="footer p-10  text-white">
+   <footer className="footer p-10 text-black ">
   <nav>
     <h6 className="footer-title">Services</h6> 
     <a className="link link-hover">Branding</a>
