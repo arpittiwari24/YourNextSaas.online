@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function Testimonial()  {
   return (
-    <section className='py-2 md:py-2 px-10'>
+    <section className='py-2 md:py-2 px-10 flex justify-center items-center'>
         <div className='container'>
           <div className='text-center text-black '>
             <h2 className='text-3xl sm:text-5xl font-bold mb-4'>Fans Section</h2>
