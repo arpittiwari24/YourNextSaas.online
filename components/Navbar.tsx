@@ -32,8 +32,8 @@ const Navbar = () => {
   // }, [email]);
 
   return (
-    <div className="mx-auto px-4">
-      <nav className="fixed top-3 w-full bg-white/50 dark:bg-black/30 backdrop-blur-3xl z-10 rounded-md">
+    <div className="">
+      <nav className="fixed  w-full bg-white/50 dark:bg-black/70 backdrop-blur-3xl z-10 rounded-md">
         <div className="navbar">
           <div className="navbar-start lg:pl-32">
             <div className="dropdown">
