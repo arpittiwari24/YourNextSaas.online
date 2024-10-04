@@ -1,0 +1,6 @@
+# robots.txt
+User-agent: *
+Disallow: /admin/
+Allow: /
+
+Sitemap: https://yournextsass-demo.vercel.app/sitemap.xml
