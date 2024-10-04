@@ -11,6 +11,13 @@ const Contact = () => {
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
+
+         //  validation
+         if (!name || !email || !details) {
+          toast.error("All fields are required")
+          return
+      }
+         
         const formData = {
             name, email, details
         }
