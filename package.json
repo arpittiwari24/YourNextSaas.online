@@ -7,7 +7,9 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "email": "email dev --dir components/email"
+    "email": "email dev --dir components/email",
+    "sitemap": "next-sitemap",
+    "postbuild": "next-sitemap"
   },
   "dependencies": {
     "@auth/supabase-adapter": "^0.1.5",
