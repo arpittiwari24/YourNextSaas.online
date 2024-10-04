@@ -4,6 +4,7 @@ import "./globals.css";
 import { Toaster } from "react-hot-toast";
 import Providers from "@/components/Providers";
 import PlausibleProvider from "next-plausible";
+import { ThemeProvider } from "@/components/theme/theme-provider";
 
 const sans = Open_Sans({ subsets: ["latin"] });
 
@@ -20,14 +21,22 @@ export default function RootLayout({
   return (
     <html lang="en">
       {/* <script defer data-domain="" src="https://plausible.io/js/script.js"></script> */}
-     <head>
-     <PlausibleProvider domain="yournextsass.vercel.app" taggedEvents={true} />
-     </head>
+      <head>
+        <PlausibleProvider
+          domain="yournextsass.vercel.app"
+          taggedEvents={true}
+        />
+      </head>
       <body className={sans.className}>
-         <Toaster position="top-center" />
-        <Providers >
-          {children}
-        </Providers>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <Toaster position="top-center" />
+          <Providers>{children}</Providers>
+        </ThemeProvider>
       </body>
     </html>
   );

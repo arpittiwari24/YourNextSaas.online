@@ -2,13 +2,14 @@
 import supabaseClient from "@/utils/supabase-connect";
 import { signIn, signOut, useSession } from "next-auth/react";
 import { useState } from "react";
+import ThemeToggle from "./theme/theme-toggle";
 
 const Navbar = () => {
   const { data: session } = useSession();
   const email = session?.user?.email;
   console.log(session);
   const [active, setActive] = useState<boolean>(false);
-  const [loading, setLoading] = useState<boolean>(true); // Set loading to true initially
+  const [loading, setLoading] = useState<boolean>(true);
 
   // const fetchData = async () => {
   //   try {
@@ -31,8 +32,8 @@ const Navbar = () => {
   // }, [email]);
 
   return (
-    <div className="mx-auto px-4 ">
-      <nav className="fixed top-3 w-full bg-[#00000010]/90 backdrop-blur-3xl z-10 rounded-md">
+    <div className="mx-auto px-4">
+      <nav className="fixed top-3 w-full bg-white/50 dark:bg-black/30 backdrop-blur-3xl z-10 rounded-md">
         <div className="navbar">
           <div className="navbar-start lg:pl-32">
             <div className="dropdown">
@@ -68,13 +69,9 @@ const Navbar = () => {
                 </li>
               </ul>
             </div>
-            {/* {session && session.user && active ? (
-              <h1 className="text-xl md:text-2xl font-semibold">YourNextSaas <span>Pro</span></h1>
-            ) : (
-              <h1 className="text-xl md:text-2xl font-semibold">YourNextSaas</h1>
-            )} */}
             <h1 className="text-xl md:text-2xl font-semibold">YourNextSaas</h1>
           </div>
+
           <div className="navbar-center hidden lg:flex">
             <ul className="menu menu-horizontal px-1 md:text-lg">
               <li>
@@ -87,7 +84,8 @@ const Navbar = () => {
               </li>
             </ul>
           </div>
-          <div className="navbar-end lg:pr-40">
+
+          <div className="navbar-end flex items-center space-x-4 lg:pr-40">
             {session ? (
               <button
                 onClick={async () => await signOut()}
@@ -103,6 +101,8 @@ const Navbar = () => {
                 Sign Up
               </button>
             )}
+
+            <ThemeToggle />
           </div>
         </div>
       </nav>

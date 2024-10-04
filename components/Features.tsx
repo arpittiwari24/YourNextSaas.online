@@ -1,6 +1,6 @@
 const Features = () => {
   return (
-    <div className="bg-[#00000010]">
+    <div className="">
       {/* Container for demo purpose */}
       <div className="container py-12 max-sm:py-2 max-sm:pt-6 mx-auto md:px-6">
         {/* Section: Design Block */}

@@ -31,6 +31,7 @@
     "next-auth": "^4.23.2",
     "next-plausible": "^3.12.0",
     "next-seo": "^6.5.0",
+    "next-themes": "^0.3.0",
     "react": "^18",
     "react-dom": "^18",
     "react-email": "2.1.1",
